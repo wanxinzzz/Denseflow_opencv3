@@ -24,6 +24,8 @@ First of all, you need opencv3 in your computer.
 ```
 pkg-config --modversion opencv
 3.x.x
+# or
+export LD_LIBRARY_PATH=/path/opencv/lib:$LD_LIBRARY_PATH
 ```
 Then just do this.
 ```
