@@ -4,7 +4,7 @@ Use GPU to extract videos' dense optical flow by opencv3
 ## Authorship
 The code is mainly borrowed from [Limin Wang's repo](https://github.com/wanglimin/dense_flow).
 
-I've changed the interface to apply to opencv3.
+I've changed the code to apply to opencv3.
 
 ## How to use
 Option | Default | Note 
@@ -33,4 +33,4 @@ Then just do this.
 # or you can set some parameters
 ./get_flow_gpu -f=ex.avi -x=img/x -y=img/y -i=img/i -b=20 -t=1 -d=0 -s=1 -h=0 -w=0
 ```
-All images will be saved in ./img/
+All images will be saved in *./img/* default.
