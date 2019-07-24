@@ -28,8 +28,11 @@ pkg-config --modversion opencv
 Then just do this.
 ```
 ./compile.sh
+mkdir img
+
 # you can simply use it by
 ./get_flow_gpu -f=ex.avi
+
 # or you can set some parameters
 ./get_flow_gpu -f=ex.avi -x=img/x -y=img/y -i=img/i -b=20 -t=1 -d=0 -s=1 -h=0 -w=0
 ```
