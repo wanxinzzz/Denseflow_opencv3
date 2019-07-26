@@ -59,6 +59,8 @@ int main(int argc, const char* argv[])
 		printf("Could not initialize capturing..\n");
 		return -1;
 	}
+    long total_frame = capture.get(CV_CAP_PROP_FRAME_COUNT);
+    cout << "Processing video :" << vidFile << endl << "Total Frames :" << total_frame << endl;
     int frame_num = 0;
     Mat image, prev_image, prev_grey, grey, frame;
 
