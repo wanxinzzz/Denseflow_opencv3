@@ -23,7 +23,7 @@ def class_process(dir_path, dst_dir_path, class_name):
     video_file_path = os.path.join(class_path, file_name)
     try:
       if os.path.exists(dst_directory_path):
-        if not os.path.exists(os.path.join(dst_directory_path, 'image_00001.jpg')):
+        if not os.path.exists(os.path.join(dst_directory_path, 'img_00001.jpg')):
           subprocess.call('rd  \"{}\"'.format(dst_directory_path), shell=True)
           print('remove {}'.format(dst_directory_path))
           os.mkdir(dst_directory_path)

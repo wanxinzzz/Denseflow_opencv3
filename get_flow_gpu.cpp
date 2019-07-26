@@ -71,6 +71,8 @@ int main(int argc, const char* argv[])
     Ptr<cuda::OpticalFlowDual_TVL1> tvl1 = cuda::OpticalFlowDual_TVL1::create();
 
 
+    const int64 start = getTickCount();
+
 	while(true) {
 		capture >> frame;
 		if(frame.empty())
@@ -99,7 +101,6 @@ int main(int argc, const char* argv[])
         GpuMat d_frame1(grey);
         GpuMat d_flow(image.size(), CV_32FC2);
 
-        const int64 start = getTickCount();
 
         // GPU optical flow
 		switch(type){
@@ -122,10 +123,6 @@ int main(int argc, const char* argv[])
             lk->calc(d_frame0, d_frame1, d_flow);
             break;
 		}
-
-        const double timeSec = (getTickCount() - start) / getTickFrequency();
-        cout << "Get optical flow : " << timeSec << " sec" << endl;
-
 
 		// Output optical flow
         GpuMat planes[2];
@@ -161,5 +158,7 @@ int main(int argc, const char* argv[])
 		}
 	}
 
+    const double timeSec = (getTickCount() - start) / getTickFrequency();
+    cout << "Time to get optical flow : " << timeSec << " sec" << endl;
     return 0;
 }
